@@ -80,7 +80,6 @@ export async function endLab(userName: string, publicSSHKey: string) {
   const cfmClient = new CloudFormation();
   const stack = await cfmClient.deleteStack({
     StackName: `user-${userName}-stack`,
-    RetainResources: ["MyKeyPair"],
   });
   return stack;
 }
