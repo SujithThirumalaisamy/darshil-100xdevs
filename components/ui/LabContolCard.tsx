@@ -27,10 +27,7 @@ export default function LabContolCard() {
 
   let timeOut: ReturnType<typeof setTimeout> | null = null;
   const handleCreateLab = async (userName: string, publicSSHKey: string) => {
-    const lab: CreateStackCommandOutput = await createLab(
-      userName,
-      publicSSHKey
-    );
+    await createLab(userName, publicSSHKey);
     setisProvisioning(true);
     timeOut = setTimeout(fetchOutput, 3000);
   };
